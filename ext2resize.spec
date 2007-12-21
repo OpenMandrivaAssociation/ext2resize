@@ -11,6 +11,7 @@ Obsoletes: ext2fs
 Provides: ext2fs
 BuildRequires:	e2fsprogs-devel
 BuildRequires:	autoconf2.5
+BuildRoot: %{_tmppath}/%{name}-buildroot
 
 %description
 ext2resize enable to enlarge or reduce a ext2 fs.
