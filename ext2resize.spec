@@ -1,7 +1,7 @@
 Summary: Ext2 fs resizer
 Name:	 ext2resize
 Version: 1.1.19
-Release: %mkrel 3
+Release: %mkrel 4
 License: GPL
 Group: System/Kernel and hardware
 Url: http://ext2resize.sourceforge.net/
