@@ -5,13 +5,12 @@ Release: %mkrel 5
 License: GPL
 Group: System/Kernel and hardware
 Url: http://ext2resize.sourceforge.net/
-Source: http://ext2resize.sourceforge.net/%{name}-%{version}.tar.bz2
+Source0: http://ext2resize.sourceforge.net/%{name}-%{version}.tar.bz2
 Patch0:	ext2resize-1.1.19-blkgetsize64.patch
 Obsoletes: ext2fs
 Provides: ext2fs
-BuildRequires:	e2fsprogs-devel
-BuildRequires:	autoconf2.5
-BuildRoot: %{_tmppath}/%{name}-buildroot
+BuildRequires:	pkgconfig(ext2fs)
+#BuildRequires:	autoconf2.5
 
 %description
 ext2resize enable to enlarge or reduce a ext2 fs.
@@ -36,20 +35,13 @@ perl -pi -e "s@/usr/lib/(libuuid.a)@%{_libdir}/\1@g" \
 make
 
 %install
-rm -rf $RPM_BUILD_ROOT
 chmod +r *
 %makeinstall
 
-install -d $RPM_BUILD_ROOT%{_mandir}/man8
-install -m 644 doc/*.8 $RPM_BUILD_ROOT%{_mandir}/man8
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+install -d %{buildroot}%{_mandir}/man8
+install -m 644 doc/*.8 %{buildroot}%{_mandir}/man8
 
 %files
-%defattr(-,root,root)
 %doc AUTHORS COPYING ChangeLog INSTALL README
 %{_sbindir}/*
 %{_mandir}/*/*
-
-
