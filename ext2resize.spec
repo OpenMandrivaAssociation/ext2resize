@@ -4,7 +4,7 @@ Version: 1.1.19
 Release: 6
 License: GPL
 Group: System/Kernel and hardware
-Url: http://ext2resize.sourceforge.net/
+Url: https://ext2resize.sourceforge.net/
 Source0: http://ext2resize.sourceforge.net/%{name}-%{version}.tar.bz2
 Patch0:	ext2resize-1.1.19-blkgetsize64.patch
 Obsoletes: ext2fs
