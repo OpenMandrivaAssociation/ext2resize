@@ -9,6 +9,11 @@ Source0: http://ext2resize.sourceforge.net/%{name}-%{version}.tar.bz2
 Patch0:	ext2resize-1.1.19-blkgetsize64.patch
 Obsoletes: ext2fs
 Provides: ext2fs
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(ext2fs)
 #BuildRequires:	autoconf2.5
 
